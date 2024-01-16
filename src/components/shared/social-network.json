@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_social_networks",
+  "info": {
+    "displayName": "Social Network",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "fa-twitter",
+        "fa-facebook-square",
+        "fa-instagram",
+        "fa-google-plus",
+        "fa-linkedin",
+        "fa-youtube"
+      ]
+    }
+  }
+}

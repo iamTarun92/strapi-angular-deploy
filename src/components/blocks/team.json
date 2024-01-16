@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_teams",
+  "info": {
+    "displayName": "Team",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
+      ],
+      "default": "primary"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card"
+    }
+  }
+}

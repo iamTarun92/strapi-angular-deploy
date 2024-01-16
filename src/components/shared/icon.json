@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_icons",
+  "info": {
+    "displayName": "Icon",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "iconList": {
+      "type": "enumeration",
+      "enum": [
+        "arrows-1_cloud-download-93",
+        "files_paper",
+        "arrows-1_share-66"
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_abouts",
+  "info": {
+    "displayName": "landingAbout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card"
+    }
+  }
+}

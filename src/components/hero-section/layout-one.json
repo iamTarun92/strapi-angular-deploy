@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_hero_section_layout_ones",
+  "info": {
+    "displayName": "Layout One",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "socialNetworks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-network"
+    }
+  }
+}
