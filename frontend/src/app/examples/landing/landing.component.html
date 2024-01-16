@@ -1,0 +1,213 @@
+<div class="wrapper">
+  <div class="page-header page-header-small">
+    <div
+      class="page-header-image rellax-header"
+      data-rellax-speed="-8"
+      [style]="
+        'background-image:url(assets/img/' +
+        heroSection?.image.data[0].attributes.name +
+        ')'
+      "
+    ></div>
+    <div class="container">
+      <div class="content-center">
+        <h1 class="title">{{ heroSection?.title }}</h1>
+        <div class="text-center">
+          <a
+            href="#pablo"
+            class="btn btn-primary btn-icon btn-round"
+            *ngFor="let hero of heroSection?.socialNetworks"
+          >
+            <i [class]="'fab ' + hero.icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto text-center">
+          <h2 class="title">{{ aboutSection?.header.label }}</h2>
+          <h5 class="description">
+            {{ aboutSection?.header.title }}
+          </h5>
+        </div>
+      </div>
+      <div class="separator separator-primary"></div>
+      <div class="section-story-overview">
+        <div class="row">
+          <div class="col-md-6">
+            <div
+              class="image-container image-left"
+              [style]="
+                'background-image:url(assets/img/' +
+                aboutSection?.cards[0].image.data.attributes.name +
+                ')'
+              "
+            >
+              <!-- First image on the left side -->
+              <p class="blockquote blockquote-primary">
+                {{ aboutSection?.cards[0].description }}
+                <br />
+                <br />
+                <small>-{{ aboutSection?.cards[0].text }}</small>
+              </p>
+            </div>
+            <!-- Second image on the left side of the article -->
+            <div
+              class="image-container"
+              style="background-image: url('assets/img/bg3.jpg')"
+            ></div>
+          </div>
+          <div class="col-md-5">
+            <!-- First image on the right side, above the article -->
+            <div
+              class="image-container image-right"
+              [style]="
+                'background-image:url(assets/img/' +
+                aboutSection?.cards[1].image.data.attributes.name +
+                ')'
+              "
+            ></div>
+            <h3>
+              {{ aboutSection?.cards[1].text }}
+            </h3>
+            <p>
+              {{ aboutSection?.cards[1].description }}
+            </p>
+            <p>
+              For a start, it does not automatically follow that a record amount
+              of ice will melt this summer. More important for determining the
+              size of the annual thaw is the state of the weather as the
+              midnight sun approaches and temperatures rise. But over the more
+              than 30 years of satellite records, scientists have observed a
+              clear pattern of decline, decade-by-decade.
+            </p>
+            <p>
+              The Arctic Ocean freezes every winter and much of the sea-ice then
+              thaws every summer, and that process will continue whatever
+              happens with climate change. Even if the Arctic continues to be
+              one of the fastest-warming regions of the world, it will always be
+              plunged into bitterly cold polar dark every winter. And
+              year-by-year, for all kinds of natural reasons, there’s huge
+              variety of the state of the ice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-team text-center">
+    <div class="container">
+      <h2 class="title">{{ teamSection?.header?.title }}</h2>
+      <div class="team" *ngIf="teamSection?.cards">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let team of teamSection.cards">
+            <div class="team-player">
+              <img
+                [src]="'assets/img/' + team.image.data.attributes.name"
+                alt="Thumbnail Image"
+                class="rounded-circle img-fluid img-raised"
+              />
+              <h4 class="title">{{ team?.title }}</h4>
+              <p class="category text-primary">{{ team?.text }}</p>
+              <p class="description">
+                {{ team?.description }}
+              </p>
+              <a
+                [href]="'#' + socialLink.url"
+                class="btn btn-primary btn-icon btn-round"
+                *ngFor="let socialLink of team.socialNetworks"
+                ><i [class]="'fab ' + socialLink.icon"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-contact-us text-center">
+    <div class="container">
+      <h2 class="title">Want to work with us?</h2>
+      <p class="description">Your project is very important to us.</p>
+      <div class="row">
+        <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+          <div
+            class="input-group input-lg"
+            [ngClass]="{ 'input-group-focus': focus === true }"
+          >
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="now-ui-icons users_circle-08"></i>
+              </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Left Font Awesome Icon"
+              (focus)="focus = true"
+              (blur)="focus = false"
+            />
+          </div>
+          <div
+            class="input-group input-lg"
+            [ngClass]="{ 'input-group-focus': focus1 === true }"
+          >
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="now-ui-icons ui-1_email-85"></i>
+              </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Left Font Awesome Icon"
+              (focus)="focus1 = true"
+              (blur)="focus1 = false"
+            />
+          </div>
+          <div class="textarea-container">
+            <textarea
+              class="form-control"
+              name="name"
+              rows="4"
+              cols="80"
+              placeholder="Type a message..."
+            ></textarea>
+          </div>
+          <div class="send-button">
+            <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg"
+              >Send Message</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer footer-default">
+    <div class="container">
+      <nav>
+        <ul>
+          <li *ngFor="let link of footerSection.links">
+            <a [href]="link.href"> {{ link.label }} </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy;
+        {{ data | date : "yyyy" }}, Designed by
+        <a
+          [href]="footerSection.rightLinks[0].href"
+          [target]="footerSection.rightLinks[0].target"
+          >{{ footerSection.rightLinks[0].label }}</a
+        >. Coded by
+        <a
+          [href]="footerSection.rightLinks[1].href"
+          [target]="footerSection.rightLinks[1].target"
+          >{{ footerSection.rightLinks[1].label }}</a
+        >.
+      </div>
+    </div>
+  </footer>
+</div>
