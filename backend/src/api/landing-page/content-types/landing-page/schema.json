@@ -15,7 +15,7 @@
     "hero": {
       "type": "component",
       "repeatable": false,
-      "component": "hero-section.layout-one"
+      "component": "blocks.layout-one"
     },
     "team": {
       "type": "component",
@@ -26,6 +26,11 @@
       "type": "component",
       "repeatable": false,
       "component": "blocks.about"
+    },
+    "Cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.work-with-us"
     }
   }
 }

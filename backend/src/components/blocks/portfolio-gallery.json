@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_portfolio_galleries",
+  "info": {
+    "displayName": "Portfolio Gallery",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "now-ui-icons design_image",
+        "now-ui-icons location_world",
+        "now-ui-icons sport_user-run"
+      ],
+      "default": "now-ui-icons design_image",
+      "required": true
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

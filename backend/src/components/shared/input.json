@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_inputs",
+  "info": {
+    "displayName": "Input",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "password",
+        "email",
+        "date"
+      ],
+      "required": true,
+      "default": "text"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "users_circle-08",
+        "ui-1_email-85",
+        "text_caps-small"
+      ]
+    }
+  }
+}

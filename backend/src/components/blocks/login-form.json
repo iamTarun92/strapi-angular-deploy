@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_login_forms",
+  "info": {
+    "displayName": "Login Form"
+  },
+  "options": {},
+  "attributes": {
+    "inputs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.input"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    }
+  }
+}

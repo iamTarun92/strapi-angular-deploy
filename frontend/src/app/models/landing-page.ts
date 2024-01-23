@@ -15,6 +15,7 @@ export interface Attributes {
   hero: Hero
   team: Team
   about: About
+  Cta: Cta
 }
 
 export interface Hero {
@@ -201,7 +202,7 @@ export interface Header2 {
 
 export interface Card2 {
   id: number
-  title: any
+  title: string
   text: string
   description: string
   image: Image3
@@ -289,6 +290,36 @@ export interface Large2 {
   height: number
   size: number
   url: string
+}
+
+export interface Cta {
+  id: number
+  header: Header3
+  inputs: Input[]
+  link: Link
+}
+
+export interface Header3 {
+  id: number
+  theme: string
+  label: string
+  title: string
+}
+
+export interface Input {
+  id: number
+  label: any
+  placeholder: string
+  type: string
+}
+
+export interface Link {
+  id: number
+  href: string
+  label: string
+  target: any
+  isExternal: boolean
+  icon: any
 }
 
 export interface Meta {}

@@ -1,0 +1,136 @@
+<div class="wrapper mt-5 pt-5 mb-5 pb-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="form-group col-6">
+              <label for="firstName">First Name*:</label>
+              <input
+                type="text"
+                id="firstName"
+                formControlName="firstName"
+                class="form-control"
+              />
+              <div
+                *ngIf="
+                  myForm.get('firstName')?.invalid &&
+                  (myForm.get('firstName')?.dirty ||
+                    myForm.get('firstName')?.touched)
+                "
+                class="text-danger"
+              >
+                First name is required.
+              </div>
+            </div>
+            <div class="form-group col-6">
+              <label for="lastName">Last Name*:</label>
+              <input
+                type="text"
+                id="lastName"
+                formControlName="lastName"
+                class="form-control"
+              />
+              <div
+                *ngIf="
+                  myForm.get('lastName')?.invalid &&
+                  (myForm.get('lastName')?.dirty ||
+                    myForm.get('lastName')?.touched)
+                "
+                class="text-danger"
+              >
+                Last name is required.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-6">
+              <label for="email">Email*:</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-control"
+              />
+              <div
+                *ngIf="
+                  myForm.get('email')?.invalid &&
+                  (myForm.get('email')?.dirty || myForm.get('email')?.touched)
+                "
+                class="text-danger"
+              >
+                Email is required.
+              </div>
+            </div>
+            <div class="form-group col-6">
+              <label for="phone">Phone*:</label>
+              <input
+                type="text"
+                id="phone"
+                formControlName="phone"
+                class="form-control"
+              />
+              <div
+                *ngIf="
+                  myForm.get('phone')?.invalid &&
+                  (myForm.get('phone')?.dirty || myForm.get('phone')?.touched)
+                "
+                class="text-danger"
+              >
+                Phone is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              rows="3"
+              formControlName="message"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            [disabled]="myForm.invalid"
+            class="btn btn-primary mt-4"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href="https://www.creative-tim.com"> Creative Tim </a>
+        </li>
+        <li>
+          <a href="https://www.creative-tim.com/about-us"> About Us </a>
+        </li>
+        <li>
+          <a href="http://blog.creative-tim.com"> Blog </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md"
+          >
+            MIT License
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="copyright">
+      &copy;
+      {{ data | date : "yyyy" }}, Designed by
+      <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded
+      by
+      <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+    </div>
+  </div>
+</footer>

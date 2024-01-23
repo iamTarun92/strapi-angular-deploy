@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'app/api.service';
-import { About, Hero, Team } from 'app/models/landing-page';
+import { About, Cta, Hero, Team } from 'app/models/landing-page';
 import { Footer } from 'app/models/sidebar-menu';
 import * as Rellax from 'rellax';
 
@@ -17,6 +17,7 @@ export class LandingComponent implements OnInit {
   aboutSection: About
   teamSection: Team
   footerSection: Footer
+  ctaSection: Cta
   loaded = false
 
   constructor(private apiService: ApiService) { }
@@ -29,13 +30,14 @@ export class LandingComponent implements OnInit {
         this.aboutSection = response.data.attributes.about
         this.teamSection = response.data.attributes.team
         this.teamSection = response.data.attributes.team
+        this.ctaSection = response.data.attributes.Cta
       }
     })
-    this.apiService.getMenus().subscribe({
-      next: (response) => {
-        this.footerSection = response.data.attributes.footer
-      }
-    })
+    // this.apiService.getMenus().subscribe({
+    //   next: (response) => {
+    //     this.footerSection = response.data.attributes.footer
+    //   }
+    // })
 
     var rellaxHeader = new Rellax('.rellax-header');
 
@@ -49,5 +51,11 @@ export class LandingComponent implements OnInit {
     body.classList.remove('landing-page');
     var navbar = document.getElementsByTagName('nav')[0];
     navbar.classList.remove('navbar-transparent');
+  }
+
+  get getHeroBgImage() {
+    return 'background-image: url(assets/img/' +
+      this.heroSection?.image.data[0].attributes.name +
+      ')'
   }
 }

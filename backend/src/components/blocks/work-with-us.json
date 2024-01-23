@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_blocks_work_with_uses",
+  "info": {
+    "displayName": "Work With Us"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    },
+    "inputs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.input"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link"
+    }
+  }
+}
