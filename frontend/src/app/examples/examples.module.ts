@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ExamplesComponent } from './examples.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 @NgModule({
     imports: [
@@ -23,7 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
         JwBootstrapSwitchNg2Module,
         AgmCoreModule.forRoot({
             apiKey: 'YOUR_KEY_HERE'
-        })
+        }),
+        RecaptchaModule,
+        RecaptchaFormsModule
     ],
     declarations: [
         LandingComponent,

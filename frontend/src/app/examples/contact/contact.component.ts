@@ -10,6 +10,7 @@ import { ApiService } from 'app/api.service';
 export class ContactComponent implements OnInit {
   myForm: FormGroup;
   data: Date = new Date();
+  siteKey="6LcvkFkpAAAAABxI33Ph8XtC_YTV7BKGME2ghjxH"
 
 
   constructor(private fb: FormBuilder, private apiService: ApiService) {
@@ -18,13 +19,18 @@ export class ContactComponent implements OnInit {
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
+      recaptcha: [null, Validators.required],
       message: [''],
     });
   }
 
   ngOnInit() {
-    var navbar = document.getElementsByTagName('nav')[0];
+    let navbar = document.getElementsByTagName('app-navbar')[0].children[0];
     navbar.classList.remove('navbar-transparent');
+  }
+  ngOnDestroy() {
+    let navbar = document.getElementsByTagName('app-navbar')[0].children[0];
+
   }
 
   onSubmit() {
@@ -48,4 +54,7 @@ export class ContactComponent implements OnInit {
     );
   }
 
+  resolved(captchaResponse: any) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+  }
 }
