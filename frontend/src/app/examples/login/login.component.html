@@ -20,7 +20,7 @@
             <div
               class="input-group form-group-no-border input-lg"
               [ngClass]="{ 'input-group-focus': focus === true }"
-              *ngFor="let login of loginFormData.inputs"
+              *ngFor="let login of loginFormData?.inputs"
             >
               <div class="input-group-prepend">
                 <span class="input-group-text">
@@ -58,6 +58,34 @@
             </h6>
           </div>
         </form>
+        <div *ngIf="!isLoggedin">
+          <button
+            type="button"
+            (click)="loginWithFacebook()"
+            class="btn btn-primary btn-block"
+          >
+            Signin with Facebook
+          </button>
+          <div
+            id="g_id_onload"
+            data-client_id="820508364262-tia155klu5d5ielrj5bcfuf47qc8bg4u.apps.googleusercontent.com"
+            data-context="signin"
+            data-ux_mode="popup"
+            data-login_uri="http://localhost:4200/index"
+            data-auto_select="true"
+            data-itp_support="true"
+          ></div>
+
+          <div
+            class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="outline"
+            data-text="signin_with"
+            data-size="large"
+            data-logo_alignment="left"
+          ></div>
+        </div>
       </div>
     </div>
   </div>

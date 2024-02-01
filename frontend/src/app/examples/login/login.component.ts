@@ -1,3 +1,4 @@
+import { SocialUser, SocialAuthService, FacebookLoginProvider } from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'app/api.service';
 import { BgImage, LoginForm } from 'app/models/login';
@@ -14,11 +15,19 @@ export class LoginComponent implements OnInit {
     focus1;
     loginFormData: LoginForm
     bgImage: BgImage
+    socialUser!: SocialUser;
+    isLoggedin?: boolean = undefined;
 
-    constructor(private apiService: ApiService) { }
+    constructor(private apiService: ApiService, private socialAuthService: SocialAuthService
+    ) { }
 
 
     ngOnInit() {
+        this.socialAuthService.authState.subscribe((user) => {
+            this.socialUser = user;
+            this.isLoggedin = user != null;
+        });
+
         this.apiService.getLoginPage().subscribe({
             next: (response) => {
                 this.loginFormData = response.data.attributes.loginForm
@@ -39,6 +48,13 @@ export class LoginComponent implements OnInit {
 
         var navbar = document.getElementsByTagName('nav')[0];
         navbar.classList.remove('navbar-transparent');
+    }
+
+    loginWithFacebook(): void {
+        this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    }
+    signOut(): void {
+        this.socialAuthService.signOut();
     }
 
 }

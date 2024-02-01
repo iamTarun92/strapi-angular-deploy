@@ -13,6 +13,7 @@ import { ExamplesComponent } from './examples.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
+import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 
 @NgModule({
     imports: [
@@ -34,6 +35,29 @@ import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
         ExamplesComponent,
         ProfileComponent,
         ContactComponent
+    ],
+    providers: [
+        {
+            provide: 'SocialAuthServiceConfig',
+            useValue: {
+                autoLogin: false,
+                providers: [
+                    {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider(
+                            '820508364262-tia155klu5d5ielrj5bcfuf47qc8bg4u.apps.googleusercontent.com'
+                        )
+                    },
+                    {
+                        id: FacebookLoginProvider.PROVIDER_ID,
+                        provider: new FacebookLoginProvider('1120490065808858')
+                    }
+                ],
+                onError: (err) => {
+                    console.error(err);
+                }
+            } as SocialAuthServiceConfig,
+        }
     ]
 })
 export class ExamplesModule { }
