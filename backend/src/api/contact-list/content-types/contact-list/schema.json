@@ -30,6 +30,13 @@
     },
     "message": {
       "type": "string"
+    },
+    "cv": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
