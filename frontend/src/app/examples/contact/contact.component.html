@@ -86,13 +86,21 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Message</label>
+            <label for="message">Message</label>
             <textarea
               class="form-control"
               id="message"
               rows="3"
               formControlName="message"
             ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="cv">CV</label>
+            <input
+              type="file"
+              (change)="onFileChange($event)"
+              formControlName="cv"
+            />
           </div>
           <div class="form-group">
             <re-captcha

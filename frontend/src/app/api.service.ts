@@ -35,4 +35,7 @@ export class ApiService {
     const url = '/contact-lists'
     return this.http.post(this.baseUrl + url, payload)
   }
+  fileUpload(formData: any) {
+    return this.http.post(this.baseUrl + '/upload', formData)
+  }
 }

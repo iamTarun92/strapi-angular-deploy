@@ -14,11 +14,11 @@
   "attributes": {
     "firstName": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "lastName": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "email": {
       "type": "string",
@@ -26,17 +26,18 @@
     },
     "phone": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "message": {
       "type": "string"
     },
     "cv": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

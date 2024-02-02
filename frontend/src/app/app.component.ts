@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
                 const number = window.scrollY;
                 var _location = this.location.path();
                 _location = _location.split('/')[2];
-                console.log(_location);
+                // console.log(_location);
 
 
                 if (number > 150 || window.pageYOffset > 150) {
