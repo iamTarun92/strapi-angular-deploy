@@ -14,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { ContactListsComponent } from './contact-lists/contact-lists.component';
+import { LoginComponent as AuthLoginComponent } from './admin/login/login.component';
 
 @NgModule({
     imports: [
@@ -34,7 +36,9 @@ import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig } f
         LoginComponent,
         ExamplesComponent,
         ProfileComponent,
-        ContactComponent
+        ContactComponent,
+        AuthLoginComponent,
+        ContactListsComponent
     ],
     providers: [
         {

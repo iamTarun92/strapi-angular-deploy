@@ -5,6 +5,7 @@ import { LandingPageRoot } from './models/landing-page';
 import { SidebarMenuRoot } from './models/sidebar-menu';
 import { LoginRoot } from './models/login';
 import { UserRoot } from './models/profile';
+import { ContactRoot } from './models/contact-list';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,13 @@ export class ApiService {
   }
   fileUpload(formData: any) {
     return this.http.post(this.baseUrl + '/upload', formData)
+  }
+
+  handelLogin(url: string, credentials: any): Observable<any> {
+    return this.http.post(this.baseUrl + url, credentials)
+  }
+  getAllContacts(): Observable<ContactRoot> {
+    const url = '/contact-lists'
+    return this.http.get(this.baseUrl + url).pipe(map(data => data as ContactRoot))
   }
 }

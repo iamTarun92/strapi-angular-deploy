@@ -10,7 +10,7 @@
         <div ngbDropdownMenu>
           <a
             class="dropdown-item"
-            [routerLink]="'examples/' + menu.href"
+            [routerLink]="menu.href"
             *ngFor="let menu of navigations?.links"
             >{{ menu.label }}</a
           >

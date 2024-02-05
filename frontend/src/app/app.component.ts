@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
 
                 if (number > 150 || window.pageYOffset > 150) {
                     navbar.classList.remove('navbar-transparent');
-                } else if (_location !== 'login' && _location !== 'registration' && this.location.path() !== '/nucleoicons' && this.location.path() !== '/examples/contact') {
+                } else if (_location !== 'login' && _location !== 'registration' && this.location.path() !== '/nucleoicons' && this.location.path() !== '/contact' && this.location.path() !== '/admin/login') {
                     // remove logic
                     navbar.classList.add('navbar-transparent');
                 }
