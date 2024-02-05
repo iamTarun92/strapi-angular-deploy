@@ -1,0 +1,32 @@
+<div class="container mt-5 pt-5" *ngIf="allList">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let list of allList">
+            <td>
+              {{ list.attributes.firstName }}
+            </td>
+            <td>
+              {{ list.attributes.lastName }}
+            </td>
+            <td>
+              {{ list.attributes.email }}
+            </td>
+            <td>
+              {{ list.attributes.phone }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

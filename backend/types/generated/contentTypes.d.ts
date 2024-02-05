@@ -833,10 +833,10 @@ export interface ApiContactListContactList extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    firstName: Attribute.String;
-    lastName: Attribute.String;
+    firstName: Attribute.String & Attribute.Required;
+    lastName: Attribute.String & Attribute.Required;
     email: Attribute.String & Attribute.Required;
-    phone: Attribute.String;
+    phone: Attribute.String & Attribute.Required;
     message: Attribute.String;
     cv: Attribute.Media;
     createdAt: Attribute.DateTime;
