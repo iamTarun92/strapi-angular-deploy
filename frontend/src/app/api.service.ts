@@ -28,8 +28,8 @@ export class ApiService {
     const url = '/login-page?populate[loginForm][populate]=*&populate[bgImage][populate]=*'
     return this.http.get(this.baseUrl + url).pipe(map(data => data as LoginRoot))
   }
-  getUserById(id: Number): Observable<UserRoot> {
-    const url = `/users/${id}?populate[role][populate]=*&populate[picture]=*&populate[reviews][populate]=*&populate[bookmarks][populate]=*&populate[socialNetworks][populate]=*&populate[profile][populate][header][populate]=*&populate[profile][populate][pictures][populate]=*&populate[profile][populate][bgImage][populate]=*`
+  getUserById(id: string): Observable<UserRoot> {
+    const url = `/users/${id}?populate[role][populate]=*&populate[picture]=*&populate[reviews][populate]=*&populate[bookmarks][populate]=*&populate[socialNetworks][populate]=*&populate[profile][populate][header][populate]=*&populate[profile][populate][pictures][populate]=*&populate[profile][populate][bgImage]=*`
     return this.http.get(this.baseUrl + url).pipe(map(data => data as UserRoot))
   }
   addContact(payload: any): Observable<any> {

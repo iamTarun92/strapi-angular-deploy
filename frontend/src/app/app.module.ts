@@ -14,12 +14,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileImageEditComponent } from './shared/profile-image-edit/profile-image-edit.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './guard/auth.service';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         NavbarComponent,
+        FooterComponent,
 
     ],
     imports: [

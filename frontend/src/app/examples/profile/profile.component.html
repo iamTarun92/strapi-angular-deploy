@@ -34,14 +34,14 @@
           class="btn btn-default btn-round btn-lg btn-icon"
           rel="tooltip"
           title="Follow me on Twitter"
-          *ngFor="let social of userData.socialNetworks"
+          *ngFor="let social of userData?.socialNetworks"
         >
           <i [class]="'fab ' + social.icon"></i>
         </a>
       </div>
-      <h3 class="title">{{ userData.profile.header.label }}</h3>
+      <h3 class="title">{{ userData?.profile?.header.label }}</h3>
       <h5 class="description">
-        {{ userData.profile.header.title }}
+        {{ userData?.profile?.header.title }}
       </h5>
       <div class="row">
         <div class="col-md-12">
@@ -51,7 +51,7 @@
             type="pills"
             class="nav nav-pills nav-pills-primary nav-pills-just-icons justify-content-center tab-space"
           >
-            <ngb-tab *ngFor="let galleryItem of userData.profile.pictures">
+            <ngb-tab *ngFor="let galleryItem of userData?.profile?.pictures">
               <ng-template ngbTabTitle>
                 <i [ngClass]="galleryItem.icon"></i>
               </ng-template>
@@ -64,7 +64,7 @@
                         *ngFor="let galleryImgs of galleryItem.gallery"
                       >
                         <img
-                          [src]="'assets/img/' + galleryImgs.name"
+                          [src]="'assets/img/' + galleryImgs?.name"
                           alt=""
                           class="img-raised"
                         />
@@ -96,35 +96,4 @@
       </div>
     </div>
   </div>
-  <footer class="footer footer-default">
-    <div class="container">
-      <nav>
-        <ul>
-          <li>
-            <a href="https://www.creative-tim.com"> Creative Tim </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/about-us"> About Us </a>
-          </li>
-          <li>
-            <a href="http://blog.creative-tim.com"> Blog </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md"
-            >
-              MIT License
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="copyright">
-        &copy;
-        {{ data | date : "yyyy" }}, Designed by
-        <a href="https://www.invisionapp.com" target="_blank">Invision</a>.
-        Coded by
-        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
-      </div>
-    </div>
-  </footer>
 </div>

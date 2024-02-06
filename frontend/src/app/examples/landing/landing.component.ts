@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'app/api.service';
 import { About, Cta, Hero, Team } from 'app/models/landing-page';
-import { Footer } from 'app/models/sidebar-menu';
 import * as Rellax from 'rellax';
 
 @Component({
@@ -16,7 +15,6 @@ export class LandingComponent implements OnInit {
   heroSection: Hero
   aboutSection: About
   teamSection: Team
-  footerSection: Footer
   ctaSection: Cta
   loaded = false
 
@@ -33,11 +31,6 @@ export class LandingComponent implements OnInit {
         this.ctaSection = response.data.attributes.Cta
       }
     })
-    // this.apiService.getMenus().subscribe({
-    //   next: (response) => {
-    //     this.footerSection = response.data.attributes.footer
-    //   }
-    // })
 
     var rellaxHeader = new Rellax('.rellax-header');
 

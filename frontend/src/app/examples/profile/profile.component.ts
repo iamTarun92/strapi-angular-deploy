@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getUserById(1).subscribe({
+    this.apiService.getUserById(sessionStorage.getItem('userId')).subscribe({
       next: (response) => {
         this.userData = response
       }
