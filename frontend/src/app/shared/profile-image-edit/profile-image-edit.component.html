@@ -1,0 +1,12 @@
+<img [src]="profileUrl" alt="profile image" *ngIf="profileUrl" width="150" />
+<div class="position-relative">
+  <input
+    type="file"
+    name=""
+    id=""
+    hidden
+    (change)="imageUpload($event)"
+    #privewImage
+  />
+  <button (click)="privewImage.click()">Change Image</button>
+</div>
