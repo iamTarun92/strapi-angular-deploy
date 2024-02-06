@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ApiService } from 'app/api.service';
 import { Navigation } from 'app/models/sidebar-menu';
+import { AuthService } from 'app/guard/auth.service';
+import { NavigationEnd, NavigationStart, Router, Event } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -12,8 +14,14 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
     navigations: Navigation
+    isLoggedIn = false
 
-    constructor(public location: Location, private element: ElementRef, private apiService: ApiService) {
+    constructor(public location: Location, private element: ElementRef, private apiService: ApiService, public authService: AuthService, router: Router) {
+        router.events.subscribe((event) => {
+            if (event instanceof NavigationEnd) {
+                this.isLoggedIn = authService.isLoggedIn()
+            }
+        });
         this.sidebarVisible = false;
     }
 
@@ -59,5 +67,8 @@ export class NavbarComponent implements OnInit {
         else {
             return false;
         }
+    }
+    logout() {
+        this.authService.logout()
     }
 }

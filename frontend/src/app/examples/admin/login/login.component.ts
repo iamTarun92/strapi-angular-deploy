@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'app/api.service';
 import { AuthService } from 'app/guard/auth.service';
-import { error } from 'console';
 
 @Component({
   selector: 'login',
@@ -36,6 +35,7 @@ export class LoginComponent implements OnInit {
       next: (response) => {
         alert('Login Sucsess')
         this.loginForm.reset()
+        this.authService.login()
         this.router.navigate(['/contact-lists'])
       },
       error: (error) => alert('Please contact admin.')

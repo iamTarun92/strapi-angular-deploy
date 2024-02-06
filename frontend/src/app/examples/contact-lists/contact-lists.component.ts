@@ -20,8 +20,6 @@ export class ContactListsComponent implements OnInit {
     this.apiService.getAllContacts().subscribe({
       next: (response) => {
         this.allList = response.data
-        console.log(this.allList);
-
       }
     })
   }

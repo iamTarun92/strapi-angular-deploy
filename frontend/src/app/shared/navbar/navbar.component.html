@@ -14,6 +14,17 @@
             *ngFor="let menu of navigations?.links"
             >{{ menu.label }}</a
           >
+
+          <a
+            class="dropdown-item"
+            routerLink="login"
+            *ngIf="!isLoggedIn; else loggedOutTemplate"
+            >Login</a
+          >
+          <ng-template #loggedOutTemplate>
+            <a class="dropdown-item" routerLink="contact-list">Contact List</a>
+            <a class="dropdown-item" routerLink="/" (click)="logout()">Logout</a>
+          </ng-template>
         </div>
       </div>
     </div>
