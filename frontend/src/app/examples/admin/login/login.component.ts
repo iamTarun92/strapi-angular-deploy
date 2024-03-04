@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         alert('Login Sucsess')
         this.loginForm.reset()
         this.authService.login()
-        this.router.navigate(['/contact-lists'])
+        this.router.navigate(['category'])
       },
       error: (error) => alert('Please contact admin.')
     })

@@ -5,11 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components/components.component';
 import { LandingComponent } from './examples/landing/landing.component';
-import { LoginComponent } from './examples/login/login.component';
 import { ProfileComponent } from './examples/profile/profile.component';
 import { ContactComponent } from './examples/contact/contact.component';
 import { ContactListsComponent } from './examples/contact-lists/contact-lists.component';
 import { AuthGuard } from './guard/auth.guard';
+import { LoginComponent } from './examples/admin/login/login.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'index', pathMatch: 'full' },
