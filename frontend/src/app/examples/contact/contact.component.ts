@@ -42,27 +42,32 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     const formData = new FormData()
     formData.append('files', this.selectedFile)
-    this.apiService.fileUpload(formData).subscribe(response => {
-      const imageId = response[0]?.id
-      const data = {
-        "data": {
-          "firstName": this.myForm.value.firstName,
-          "lastName": this.myForm.value.lastName,
-          "email": this.myForm.value.email,
-          "phone": this.myForm.value.phone,
-          "message": this.myForm.value.message,
-          "cv": imageId
+    this.apiService.fileUpload(formData).subscribe({
+      next: response => {
+        const imageId = response[0]?.id
+        const data = {
+          "data": {
+            "firstName": this.myForm.value.firstName,
+            "lastName": this.myForm.value.lastName,
+            "email": this.myForm.value.email,
+            "phone": this.myForm.value.phone,
+            "message": this.myForm.value.message,
+            "cv": imageId
+          }
         }
+        this.apiService.addContact(data).subscribe(
+          (response) => {
+            this.myForm.reset()
+            alert('Record created successfully');
+          },
+          (error) => {
+            console.error('Error creating record:', error);
+          }
+        );
+      },
+      error: (error) => {
+        console.log(error);
       }
-      this.apiService.addContact(data).subscribe(
-        (response) => {
-          this.myForm.reset()
-          alert('Record created successfully');
-        },
-        (error) => {
-          console.error('Error creating record:', error);
-        }
-      );
     });
   }
 
